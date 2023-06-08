@@ -1,170 +1,153 @@
 :root {
-    font-size: 20px;
-    box-sizing: inherit;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
-  p {
-    margin: 0;
-  }
-  
-  p:not(:last-child) {
-    margin-bottom: 1.5em;
-  }
-  
-  body {
-    font: 1em/1.618 Inter, sans-serif;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    min-height: 100vh;
-    padding: 30px;
-    
-    color: #224;
-    background:
-      url(https://rajalakshmi.org/image/banner-1.jpg)
-      center / cover no-repeat fixed;
-  }
-  
+  font-size: 20px;
+  box-sizing: inherit;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+body {
+  font: 1em/1.618 Inter, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 30px;
+  color: #224;
+  background: url(https://rajalakshmi.org/image/banner-1.jpg) center / cover no-repeat fixed;
+}
+
+.card {
+  text-align: center;
+  max-width: 350px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  margin-top: -200px;
+}
+
+@media (min-width: 426px) {
+  /* Styles for screen width larger than 425px */
   .card {
-    text-align: center;
-    max-width: 300px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
     max-width: 500px;
     height: 300px;
-    padding: 35px;
-  
-    border: 1px solid rgba(255, 255, 255, .25);
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  
-    backdrop-filter: blur(15px);
   }
+}
 
+@media (max-width: 425px) {
+  /* Styles for screen width up to 425px */
+  .card {
+    max-width: 100%;
+    height: 200px;
+  }
+}
 
-  @media (min-width: 426px) {
-    /* Styles for screen width larger than 500px */
-    .card {
-      max-width: 500px;
-      height: 300px;
-    }
-  }
-  
-  @media (max-width: 425px) {
-    /* Styles for screen width up to 500px */
-    .card {
-      max-width: 100%;
-      height: 200px;
-    }
-  }
-  
-  
-  
-  .img {
-    background-image: url("https://assets.codepen.io/4787486/trees.png");
-      background-size: cover;
-      transition: .3s ease-in-out;
-    opacity: 0.2
-  }
-  
-  .card-footer {
-    font-size: 0.65em;
-    color: #446;
-  }
-  
-  
-  .input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #CCC;
-    color: #555;
-    box-sizing: border-box;
-    font-family: 'Arvo';
-    font-size: 18px;
-    height: 50px;
-    left: 50%;
-    margin: -25px 0 0 -100px;
-    padding: 10px 0px;
-    position: absolute;
-    top: 50%;
-    width: 200px;
-  
-    &:focus {
-      outline: none;    
-    }
-  }
-  
-  input::-webkit-input-placeholder {
-    color: #AAA;
-  }
-  
-  input:focus::-webkit-input-placeholder {
-    color: dodgerblue;
-  }
-  
-  .input:focus+.underline {
-    transform: scale(1);
-  }
-  
-  .underline {
-    background-color: dodgerblue;
-    display: inline-block;
-    height: 2px;
-    left: 50px;
-    margin-top: -4px;
-    position: absolute;
-    top: 185px;
-    -webkit-transform: scale(0, 1);
-    transform: scale(0, 1);
-    -webkit-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-    width: 202px;
-  }
-  
-  button{
-      font-family: 'Poppins', sans-serif;
-      width: 90px;
-      height: 30px;
-      border: none;
-      outline: none;
-      background: #2f2f2f;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 40px;
-      text-align: center;
-      box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-  }
-  
-  .element {
-    transition: 1s;
-  }
-  
-  .ip2 {
-    border-radius: 25px;
-  }
+.img {
+  background-image: url("https://assets.codepen.io/4787486/trees.png");
+  background-size: cover;
+  transition: .3s ease-in-out;
+  opacity: 0.2
+}
 
-  .logo {
-    text-align: center;
-    height: 150px;
-    width: 156px;
-    border-radius: 50%;
-  }
+.card-footer {
+  font-size: 0.65em;
+  color: #446;
+}
 
-  .img-div {
-    text-align: center;
-  }
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
+  left: 50%;
+  margin: -25px 0 0 -100px;
+  padding: 10px 0px;
+  position: absolute;
+  top: 50%;
+  width: 100px;
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  left: 50px;
+  margin-top: -4px;
+  position: absolute;
+  top: 185px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  width: 90px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.element {
+  transition: 1s;
+}
+
+.ip2 {
+  border-radius: 25px;
+}
+
+.logo {
+  text-align: center;
+  height: 150px;
+  width: 156px;
+  border-radius: 50%;
+}
+
+.img-div {
+  text-align: center;
+}
