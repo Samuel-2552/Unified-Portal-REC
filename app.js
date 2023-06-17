@@ -31,3 +31,34 @@ async function getDetails(rollNo) {
 
 }
 
+var body = ''
+
+
+
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/views/index.html");
+});
+
+var rollNumber = '';
+
+app.post("/", function(req, res) {
+    rollNumber = req.body.rollnumber;
+    
+    getDetails(rollNumber).then((data) => {
+        body = data;
+        res.redirect("/details");
+    });
+    
+
+});
+
+
+
+app.get("/details", function(req, res) {
+    res.send(body);
+})
+
+
+app.listen(3000, function() {
+    console.log("Server started on port 3000");
+});
