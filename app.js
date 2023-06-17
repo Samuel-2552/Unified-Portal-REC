@@ -1,6 +1,12 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 const fs = require('fs');
 
 const stu_details = JSON.parse(fs.readFileSync('stu_data.json', 'utf-8'));
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 
