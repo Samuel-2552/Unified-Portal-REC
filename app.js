@@ -4,7 +4,6 @@ const app = express();
 const fs = require('fs');
 
 const parseData = require("./parseData");
-const { parse } = require('path');
 
 
 app.use(express.static('public'));
