@@ -29,7 +29,7 @@ function parseData(rollNo, semester, cat) {
         const parsedData = JSON.parse(data.d);
         const index = caTest(parsedData, cat);
         // returns the object which has the CAT exam marks. 
-        return xyz[index];
+        return index;
     });
 }
 module.exports = parseData;
