@@ -1,6 +1,7 @@
 const fs = require('fs');
 const stu_details = JSON.parse(fs.readFileSync('stu_data.json', 'utf-8'));
 const caTest = require("./caTest");
+const assignmentMarks = require("./assignmentMarks");
 
 async function getDetails(rollNo, semester) {
     const number = stu_details[rollNo][0];
@@ -23,11 +24,16 @@ async function getDetails(rollNo, semester) {
 
 }
 
-function parseData(rollNo, semester, cat) {
+function parseData(rollNo, semester, choice, cat=1) {
     return getDetails(rollNo, semester).then(function (data) {
         data = JSON.parse(data);
         const parsedData = JSON.parse(data.d);
-        const index = caTest(parsedData, cat);
+        if (choice==1) {
+            var index = caTest(parsedData, cat);
+        }
+        else {
+            var index = assignmentMarks(parsedData);
+        }
         // returns the object which has the CAT exam marks. 
         return index;
     });

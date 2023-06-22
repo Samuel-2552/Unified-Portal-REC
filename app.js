@@ -33,31 +33,38 @@ app.get("/details", function(req, res) {
 
 app.post("/details", function(req, res) {
     const semester = req.body.semester;
-    const cat = req.body.catNumber;
+    const choice = req.body.choice; 
 
-    parseData(rollNumber, semester, 3).then(function(data) {
-        let toBeSent = '<table>';
-        toBeSent += "<tr><th>Subject</th><th>U1</th><th>U2</th><th>U3</th><th>U4</th><th>U5</th><th>Total</th></tr>"
-        data.forEach(function(obj) {
-            toBeSent += "<tr>";
-            toBeSent += `<td>${obj.SubjName}</td>`;
-            toBeSent += `<td>${obj.U1}</td>`;
-            toBeSent += `<td>${obj.U2}</td>`;
-            toBeSent += `<td>${obj.U3}</td>`;
-            toBeSent += `<td>${obj.U4}</td>`;
-            toBeSent += `<td>${obj.U5}</td>`;
-            toBeSent += `<td>${obj.Total}</td>`; // Display the total
-            toBeSent += "</tr>";
+    if (choice == 1) {
 
+        const cat = req.body.catNumber;
 
+        parseData(rollNumber, semester, choice, cat).then(function (data) {
+            let toBeSent = '<table>';
+            toBeSent += "<tr><th>Subject</th><th>U1</th><th>U2</th><th>U3</th><th>U4</th><th>U5</th><th>Total</th></tr>"
+            data.forEach(function (obj) {
+                toBeSent += "<tr>";
+                toBeSent += `<td>${obj.SubjName}</td>`;
+                toBeSent += `<td>${obj.U1}</td>`;
+                toBeSent += `<td>${obj.U2}</td>`;
+                toBeSent += `<td>${obj.U3}</td>`;
+                toBeSent += `<td>${obj.U4}</td>`;
+                toBeSent += `<td>${obj.U5}</td>`;
+                toBeSent += `<td>${obj.Total}</td>`; // Display the total
+                toBeSent += "</tr>";
+            });
+
+            toBeSent += "</table>";
+            res.send(toBeSent);
 
         });
+    }
+    else {
+        parseData(rollNumber, semester, choice).then((data) => {
+            res.send(data);
+        });
 
-        toBeSent += "</table>";
-
-        res.send(toBeSent);
-    });
-
+    }
 
 });
 

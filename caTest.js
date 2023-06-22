@@ -2,6 +2,8 @@ function getTest(ipArray, exam) {
 
     const caTestPattern = /CA TEST (\d+)/;
 
+    console.log(ipArray);
+
     const catExamArray = [];
 
     for (let i=0; i<ipArray.length; i++) {
