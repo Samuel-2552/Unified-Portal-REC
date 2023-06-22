@@ -15,7 +15,7 @@ async function getDetails(rollNo, semester) {
             "Referer": "http://rajalakshmi.in/UI/Modules/Profile/Profile.aspx?FormHeading=myProfile",
             "Referrer-Policy": "strict-origin-when-cross-origin"
         },
-        "body": "{\"PersonId\":" + number + ",\"Semester\":4,\"Category\":0}", //filter based on semester, tho, idk waht the category thing does, till now
+        "body": "{\"PersonId\":" + number + ",\"Semester\":" + semester + ",\"Category\":0}", //filter based on semester, tho, idk waht the category thing does, till now
         "method": "POST"
     });
 
