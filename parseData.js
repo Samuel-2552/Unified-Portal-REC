@@ -1,7 +1,8 @@
 const fs = require('fs');
 const stu_details = JSON.parse(fs.readFileSync('stu_data.json', 'utf-8'));
+const caTest = require("./caTest");
 
-async function getDetails(rollNo) {
+async function getDetails(rollNo, semester) {
     const number = stu_details[rollNo][0];
 
     const data = await fetch("http://rajalakshmi.in/UI/Modules/HRMS/ManageStaffStudent/UniPersonInfo.asmx/BindInternalMarks", {
@@ -26,7 +27,8 @@ function parseData(rollNo) {
     return getDetails(rollNo).then(function (data) {
         data = JSON.parse(data);
         const xyz = JSON.parse(data.d);
-        return xyz;
+        const index = caTest(xyz, 3);
+        return xyz[index];
     });
 }
 module.exports = parseData;
