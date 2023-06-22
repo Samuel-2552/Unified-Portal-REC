@@ -16,17 +16,6 @@ function handleEvent(event) {
         }
 
 
-        var result = document.querySelector(".marklist");
-
-        document.addEventListener("click", function(e) {
-            var b = document.querySelector("#cat-ch");
-            var c = document.querySelector("#assign-ch");
-            if (e.target === b || e.target === c) {
-                result.classList.remove("hidden");
-            }
-        });
-
-
     }
 
 
