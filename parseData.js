@@ -23,11 +23,12 @@ async function getDetails(rollNo, semester) {
 
 }
 
-function parseData(rollNo) {
-    return getDetails(rollNo).then(function (data) {
+function parseData(rollNo, semester, cat) {
+    return getDetails(rollNo, semester).then(function (data) {
         data = JSON.parse(data);
-        const xyz = JSON.parse(data.d);
-        const index = caTest(xyz, 3);
+        const parsedData = JSON.parse(data.d);
+        const index = caTest(parsedData, cat);
+        // returns the object which has the CAT exam marks. 
         return xyz[index];
     });
 }
