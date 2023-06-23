@@ -7,6 +7,7 @@ function getTest(ipArray, exam) {
         const str = ipArray[i]['EventTitle'].match(caTestPattern);
         if (str){
             if (str[1]==exam) {
+                ipArray[i]['EventTitle'] = str[0];
                 catExamArray.push(ipArray[i]);
             }
         }
