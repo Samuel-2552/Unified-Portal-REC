@@ -42,8 +42,6 @@ app.post("/", function(req, res) {
 
 app.get("/details", function(req, res) {
 
-    console.log(req.session.initialized);
-
     if (req.session.initialized) {
         res.sendFile(__dirname + "/views/selection.html");
     }

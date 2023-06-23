@@ -5,7 +5,6 @@ function assignmentMarks(ipArray) {
     for (let i=0; i<ipArray.length; i++) {
         const str = ipArray[i]['EventTitle'].match(assignPattern);
         if (str) {
-            console.log(str[0]);
             assignmentArray.push(ipArray[i]);
         }
     }
