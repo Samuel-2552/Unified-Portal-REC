@@ -33,19 +33,10 @@ var rollNumber = '';
 
 app.post("/", function(req, res) {
     rollNumber = req.body.rollnumber;
+    req.session.initialized = true;
     res.redirect("/details");
 });
 
-
-app.use(function(req, res, next) {
-    if (!req.session.initialized) {
-        req.session.initialized = true;
-
-        return res.redirect('/');
-    }
-
-    next();
-});
 
 
 
